@@ -34,6 +34,11 @@
           <%= humanized_money_with_symbol @order.total_cents / 100.0 %>
         </th>
       </tr>
+      <tr>
+        <th colspan="4">
+          User's email: <%= @order.email %>
+        </th>
+      </tr>
     </tfoot>
   </table>
   <%= link_to "Continue Shopping" , root_path, class: 'btn btn-lg btn-primary' %>
