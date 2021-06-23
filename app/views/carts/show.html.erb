@@ -1,5 +1,9 @@
 <section class="cart-show">
 
+  <% if @message %>
+  <div class="alert alert-primary" role="alert"><%= @message %> </div>
+  <%= link_to "Home Page",products_path %>
+  <% else %>
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
@@ -14,7 +18,7 @@
           <th>Price</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody>      
         <% enhanced_cart.each do |item| %>
           <%= render 'item', product: item[:product], quantity: item[:quantity].to_i %>
         <% end %>
@@ -48,5 +52,6 @@
       <% end %>
     </div>
   </div>
+  <% end %>
 
 </section>
