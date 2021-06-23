@@ -1,7 +1,13 @@
 class OrdersController < ApplicationController
 
+  LineitemsRecord=ActiveRecord::Base
+  class Line_items < LineitemsRecord
+  end
+
   def show
     @order = Order.find(params[:id])
+    # query line itmes for the order
+    @line_item=Line_items.where({order_id:params[:id]})
   end
 
   def create
