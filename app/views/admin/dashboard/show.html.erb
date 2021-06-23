@@ -1,5 +1,5 @@
 <h1>Dashboard</h1>
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th></th>
@@ -9,16 +9,30 @@
     </tr>
   </thead>
   <tbody>
-    <% @categories.each do |category|   %>
-    <%= category.name%>
-    <%end%>
- 
-
+    <% i=0%>
+    <% @categories.each do |category| %>
+      <tr>
+        <td>
+          <%= category.id%>
+        </td>
+        <td>
+          <%= category.name%>
+        </td>
+        <td>          
+          <%= count_products_by_category[i]%>
+          <% i+=1%>
+        </td>
+        <td>
+          <%= link_to "Detail",category_path(id: category.id) %>
+        </td>
+      </tr>
+      <%end%>
   </tbody>
   <tfoot>
     <tr>
       <th colspan="2">Total </th>
-      <th></th>
+      <th><%= count_products_by_category.sum%></th>
+      <th> <%= link_to "All Products",products_path %></th>
     </tr>
   </tfoot>
 </table>
