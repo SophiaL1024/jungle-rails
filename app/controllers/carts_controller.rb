@@ -1,10 +1,9 @@
 class CartsController < ApplicationController
 
   def show
-    if @enhanced_cart.nil?
-      # raise enhanced_cart.inspect
+    # check if cart is empty, then display a message, instead of the empty cart list
+    if enhanced_cart.length==0      
       @message="Your cart is empty. Please go to the home page to add some products first." 
-    
     end
     render :show
   end

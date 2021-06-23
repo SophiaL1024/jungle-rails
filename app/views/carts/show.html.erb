@@ -1,6 +1,6 @@
 <section class="cart-show">
-
-  <% if @message %>
+# check if cart is empty
+  <% if defined?(@message) %> 
   <div  class="alert alert-warning"><%= @message %> 
   <%= link_to "Home Page",products_path %>
   </div>
