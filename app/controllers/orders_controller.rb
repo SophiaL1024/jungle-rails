@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
 
+  before_filter :authorize
+  
   LineitemsRecord=ActiveRecord::Base
   class Line_items < LineitemsRecord
   end

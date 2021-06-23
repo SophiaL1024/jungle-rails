@@ -1,5 +1,7 @@
 class CartsController < ApplicationController
 
+  before_filter :authorize
+
   def show
     # check if cart is empty, then display a message, instead of the empty cart list
     if enhanced_cart.length==0      
