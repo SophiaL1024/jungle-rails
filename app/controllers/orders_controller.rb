@@ -8,8 +8,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     # query line itmes for the order
     @line_items=Line_items.where(order_id:params[:id])
-    # @products = Product.all
-    # raise @products.inspect
+
   end
 
   def create
