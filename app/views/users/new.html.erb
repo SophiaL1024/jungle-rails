@@ -20,6 +20,11 @@
   <div class="form-group">
     <%= f.label :Password_Confirmation %>
       <%= f.password_field :password_confirmation %>
+      <% flash.each do |type, msg| %>
+      <span class="alert alert-danger">
+        <%= msg %>
+      </span>
+    <% end %>
   </div>
   <%= f.submit 'Submit', class: 'btn btn-primary' %>
   <% end %>
