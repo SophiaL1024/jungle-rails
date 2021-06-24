@@ -5,6 +5,7 @@
 
 // App
 @import "products";
+@import "users";
 
 // Global
 body {
@@ -14,4 +15,7 @@ body {
 // Bootstrap adjustments
 form.button_to {
   display: inline;
+}
+#user-greeting{
+  padding: 15px;
 }
