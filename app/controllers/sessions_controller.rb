@@ -9,16 +9,16 @@ class SessionsController < ApplicationController
       # Save the user id inside the browser cookie. This is how we keep the user 
       # logged in when they navigate around our website.
       session[:user_id] = user.id
-      redirect_to '/'
+      redirect_to root_path
     else
     # If user's login doesn't work, send them back to the login form.
-      redirect_to '/users/new'
+      redirect_to new_session_path,alert:"Incorrect password. Try again." 
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to '/'
+    redirect_to root_path
   end
 
 end
