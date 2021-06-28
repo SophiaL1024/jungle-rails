@@ -1,15 +1,12 @@
 class OrdersController < ApplicationController
 
   before_filter :authorize
-  
-  LineitemsRecord=ActiveRecord::Base
-  class Line_items < LineitemsRecord
-  end
 
   def show
     @order = Order.find(params[:id])
     # query line itmes for the order
-    @line_items=Line_items.where(order_id:params[:id])
+    @line_items=LineItem.where(order_id:params[:id])
+
 
   end
 
@@ -19,7 +16,7 @@ class OrdersController < ApplicationController
 
     if order.valid?
       empty_cart!
-      redirect_to order, notice: 'Your Order has been placed.'
+      redirect_to order, notice: 'Your Order has been placed!'
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
     end
