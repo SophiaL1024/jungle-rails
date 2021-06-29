@@ -15,7 +15,7 @@ RSpec.feature "ProductDetails", type: :feature, js:true do
       )
     end
   end
-  scenario "They see all products" do
+  scenario "Can see the clicked product detail" do
     # ACT
     visit root_path
     page.find('article>header', match: :first).click
