@@ -80,6 +80,8 @@ RSpec.describe User, type: :model do
 
   describe "edge cases" do
     it "should trim spaces before or after email adress, when login " do
+      @user_authen = User.authenticate_with_credentials('  sophialiu@example.com   ', '123456')
+      expect(@user_authen).equal?(@user)
 
     end
   end
