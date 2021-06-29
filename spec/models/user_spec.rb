@@ -37,15 +37,24 @@ RSpec.describe User, type: :model do
     end
    
     it "email should be required" do
-
+      @user_params[:email]=""
+      @user = User.create @user_params
+      expect(@user).not_to be_valid 
+      expect(@user.errors.full_messages.first).to eq("Email can't be blank")     
     end
 
     it "first_name should be required" do
-
+      @user_params[:first_name]=""
+      @user = User.create @user_params
+      expect(@user).not_to be_valid 
+      expect(@user.errors.full_messages.first).to eq("First name can't be blank")    
     end
 
     it "last_name should be required" do
-
+      @user_params[:last_name]=""
+      @user = User.create @user_params
+      expect(@user).not_to be_valid 
+      expect(@user.errors.full_messages.first).to eq("Last name can't be blank")   
     end
 
   end
