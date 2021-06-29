@@ -56,6 +56,14 @@ RSpec.describe User, type: :model do
       expect(@user).not_to be_valid 
       expect(@user.errors.full_messages.first).to eq("Last name can't be blank")   
     end
-
+  end
+  context "Password minimum length" do
+    it "password'length should be greater than three " do
+      @user_params[:password]="12"
+      @user_params[:password_confirmation]="12"
+      @user = User.create @user_params
+      expect(@user).not_to be_valid 
+      expect(@user.errors.full_messages.first).to eq("Password is too short (minimum is 3 characters)")  
+    end
   end
 end

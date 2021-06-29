@@ -5,7 +5,10 @@ class UsersController < ApplicationController
   def create
 
     if user_params[:password].empty? 
-      redirect_to new_user_path, alert:"Password should not be blank."       
+      redirect_to new_user_path, alert:"Password should not be blank."  
+    elsif user_params[:password].length<3
+      redirect_to new_user_path, alert:"Password's length should be greater than three." 
+    end     
     elsif user_params[:password]!=user_params[:password_confirmation]
       redirect_to new_user_path, alert:"Password do not match." 
     elsif User.find_by email:user_params[:email] 
