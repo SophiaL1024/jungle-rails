@@ -71,6 +71,17 @@ RSpec.describe User, type: :model do
       @user_authen = User.authenticate_with_credentials('sophialiu@example.com', '123456')
       expect(@user_authen).equal?(@user)
     end
+
+    it "should not login, if password not match email" do
+      @user_authen = User.authenticate_with_credentials('sophialiu@example.com', '12345')
+      expect(@user_authen).equal?(nil)
+    end
+  end
+
+  describe "edge cases" do
+    it "should trim spaces before or after email adress, when login " do
+
+    end
   end
 
 end
