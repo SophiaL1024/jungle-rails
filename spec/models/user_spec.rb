@@ -30,7 +30,7 @@ RSpec.describe User, type: :model do
 
     it "email should be unique and not case sensitive" do
       @user = User.create @user_params
-      @user_params[:email]="Sophialiu@example.com"
+      @user_params[:email]="Sophialiu@exAmple.com"
       @user = User.create @user_params
       expect(@user).not_to be_valid   
       expect(@user.errors.full_messages.first).to eq("Email has already been taken")    
@@ -81,6 +81,11 @@ RSpec.describe User, type: :model do
   describe "edge cases" do
     it "should trim spaces before or after email adress, when login " do
       @user_authen = User.authenticate_with_credentials('  sophialiu@example.com   ', '123456')
+      expect(@user_authen).equal?(@user)
+    end
+
+    it "login email should not be case sensitive" do
+      @user_authen = User.authenticate_with_credentials('SophiaLiu@exAmple.com', '123456')
       expect(@user_authen).equal?(@user)
 
     end
