@@ -3,17 +3,17 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
 
   before(:each) do
-    @user_params={
+   @user_params={
       first_name: 'Sophia',
       last_name: 'Liu',
       email: 'sophialiu@example.com',
       password: '123456',
       password_confirmation: '123456'
-    }
-    
-  end
+    }    
+   end
 
-  context "validation specs" do
+  describe 'Validations' do
+ 
     it" should have password" do
       @user_params[:password]=""
       @user = User.create @user_params
@@ -56,8 +56,7 @@ RSpec.describe User, type: :model do
       expect(@user).not_to be_valid 
       expect(@user.errors.full_messages.first).to eq("Last name can't be blank")   
     end
-  end
-  context "Password minimum length" do
+
     it "password'length should be greater than three " do
       @user_params[:password]="12"
       @user_params[:password_confirmation]="12"
@@ -66,4 +65,12 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages.first).to eq("Password is too short (minimum is 3 characters)")  
     end
   end
+
+  describe '.authenticate_with_credentials' do
+    it "should authenticate email and password and login" do 
+      @user_authen = User.authenticate_with_credentials('sophialiu@example.com', '123456')
+      expect(@user_authen).equal?(@user)
+    end
+  end
+
 end
