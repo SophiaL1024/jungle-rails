@@ -4,15 +4,25 @@ A mini e-commerce application built with Rails 4.2.
 
 ## Screenshoot
 -- Home page
+!["Screenshots of Homepage"](https://github.com/SophiaL1024/jungle-rails/blob/master/public/img/home_page.png?raw=true)
 -- Product detail page
+!["Screenshots of Product Detail"](https://github.com/SophiaL1024/jungle-rails/blob/master/public/img/product_detail_page.png?raw=true)
 -- Categories
+!["Screenshots of Categories"](https://github.com/SophiaL1024/jungle-rails/blob/master/public/img/categories.png?raw=true)
 -- Cart
+!["Screenshots of Cart"](https://github.com/SophiaL1024/jungle-rails/blob/master/public/img/cart.png?raw=true)
 -- Order
+!["Screenshots of Order"](https://github.com/SophiaL1024/jungle-rails/blob/master/public/img/order.png?raw=true)
 -- Admin/dashboard
+!["Screenshots of Admin/dashboard"](https://github.com/SophiaL1024/jungle-rails/blob/master/public/img/admin_dashboard.png?raw=true)
 -- Admin/categories
+!["Screenshots of Admin/categories"](https://github.com/SophiaL1024/jungle-rails/blob/master/public/img/admin_categories.png?raw=true)
 -- Admin/products
+!["Screenshots of Admin/products"](https://github.com/SophiaL1024/jungle-rails/blob/master/public/img/admin_product.png?raw=true)
 -- Signup with an existing email
+!["Screenshots of Signup with an existing email"](https://github.com/SophiaL1024/jungle-rails/blob/master/public/img/signup_with_existing_email.png?raw=true)
 -- Login with a wrong password
+!["Screenshots of Login with a wrong password"](https://github.com/SophiaL1024/jungle-rails/blob/master/public/img/login_with_wrong_password.png?raw=true)
 
 
 ## Additional Steps for Apple M1 Machines
